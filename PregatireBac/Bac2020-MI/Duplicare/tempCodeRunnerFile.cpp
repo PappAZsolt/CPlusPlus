@@ -1,0 +1,2 @@
+
+  duplicare(n, d);
