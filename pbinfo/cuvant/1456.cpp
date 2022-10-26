@@ -1,29 +1,30 @@
-#include <fstream>
 #include <cstring>
+#include <iostream>
 
 using namespace std;
 
-ifstream cin("text.in");
-ofstream cout("text.out");
-
 int main()
 {
-  char voc[] = "aeou";
   int ok = 0;
   char cuv[101];
   cin >> cuv;
-  for (int i = 0; i <= strlen(cuv); i++)
+  char temp;
+  for (int i = 0; i < strlen(cuv); i++)
   {
-    int temp = cuv[i];
-    if (strchr(voc,temp))
-    {cout << "NU";
-      return 0;}
-    if (strchr(temp, "i"))
-       ok++;
+    temp = cuv[i];
+    if (strchr("aeou", temp) != NULL)
+    {
+      cout << "NU" << endl;
+      return 0;
+    }
+    if (strchr("i", temp) == NULL)
+    {
+      ok = 1;
+    }
   }
-
   if (ok != 0)
     cout << "DA";
-  else 
+  else
     cout << "NU";
+  cout << endl;
 }
